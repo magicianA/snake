@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject target;
     void Start()
     {
-        
+        target = GameObject.Find("SnakeHead");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        move();
+    }
+    void move()
+    {
+        Vector3 targetpos = target.transform.position;
+        targetpos.z = transform.position.z;
+        transform.position = targetpos;
     }
 }

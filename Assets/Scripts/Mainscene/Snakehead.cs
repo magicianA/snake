@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Snakehead : MonoBehaviour
 {
-    private float speed = 1f;
+    public float speed = 100f;
     void Start()
     {
          
@@ -12,9 +12,21 @@ public class Snakehead : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            this.transform.position += Vector3.right;
+        Move();
+    }
+    private void Move()
+    {
+        Vector3 mouse = Input.mousePosition;
+        Vector3 SnakePos = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 drec = mouse - SnakePos;
+        drec.z = 0;
+        if(drec.magnitude > 40f){
+            drec = drec.normalized;
+            transform.up = drec;
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+        else{
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
     }
 
