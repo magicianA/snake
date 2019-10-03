@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Mainscene\CameraMove.cs" />
+     <Compile Include="Assets\Scripts\Mainscene\Follow.cs" />
+     <Compile Include="Assets\Scripts\Mainscene\Items.cs" />
+     <Compile Include="Assets\Scripts\Mainscene\painter.cs" />
      <Compile Include="Assets\Scripts\Mainscene\Snakehead.cs" />
      <Compile Include="Assets\Scripts\Startscene\exit.cs" />
      <Compile Include="Assets\Scripts\Startscene\start.cs" />
