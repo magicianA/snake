@@ -6,6 +6,11 @@ TagManager:
   tags:
   - food
   - wall
+  - boom
+  - mushroom
+  - poisonousgrass
+  - energy
+  - sheild
   layers:
   - Default
   - TransparentFX

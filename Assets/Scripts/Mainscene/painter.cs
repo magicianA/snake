@@ -22,19 +22,24 @@ public class painter : MonoBehaviour
     public float fooddensity = 0.07f; //food parameters
     public float itemdensity = 0.1f;
     public float itemweight; //item parameters
+    List <List <int>> terrain = new List<List<int>> (); 
     void Awake()
     {
         _instance = this;
     }
     void Start()
     {
+        inittarrain();
         initmap();
         initfood();
     }
-
-    void Update()
+    void inittarrain()
     {
-        
+        for(int i = 0 ;i < mapx ;i++){
+            terrain.Add(new List<int> ());
+            for(int j = 1 ;j < mapy ;j++)
+                terrain[i].Add(0);
+        }
     }
     void initmap()
     {
@@ -66,7 +71,14 @@ public class painter : MonoBehaviour
             genfood();
     }
     public void genfood(){
-        Instantiate(foodprefab,new Vector3( System.Convert.ToInt32(Random.Range(1,mapx-1))*boxsize, System.Convert.ToInt32(Random.Range(1,mapy-1))*boxsize,0),Quaternion.identity);
+        int x = System.Convert.ToInt32(Random.Range(1,mapx-1));
+        int y = System.Convert.ToInt32(Random.Range(1,mapy-1));
+        while(terrain[x][y] != 0){
+            x = System.Convert.ToInt32(Random.Range(1,mapx-1));
+            y = System.Convert.ToInt32(Random.Range(1,mapy-1));
+        }
+        terrain[x][y] = 1;
+        Instantiate(foodprefab,new Vector3(x * boxsize,y * boxsize , 0),Quaternion.identity);
     }
 
 }

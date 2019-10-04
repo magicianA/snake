@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Snakehead : MonoBehaviour
 {
     public float speed = 100f;
     public List<Transform> bodylist = new List<Transform> ();
-    public GameObject bodyprefab;
+    public GameObject bodyprefab,sheildcircleprefab;
+    private GameObject sheildcircle;
+    private bool isspeedup = false, issheild = false;
+    private float  speeduptime = 0f,sheildtime = 0f;
     void Start()
     {
 
@@ -19,8 +23,30 @@ public class Snakehead : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.G)){
             Grow();
         }
-        if(Input.GetKeyDown(KeyCode.D)){
+        if(Input.GetKeyDown(KeyCode.R)){
             Reduce();
+        }
+        speedupcountdown();
+        sheildcountdown();
+    }
+    private void speedupcountdown()
+    {
+        if(isspeedup){
+            speeduptime -= Time.deltaTime;
+            if(speeduptime <= 0){
+                isspeedup = false;
+                speed = 100f;
+            }
+        }
+    }
+    private void sheildcountdown()
+    {
+        if(issheild){
+            sheildtime -= Time.deltaTime;
+            if(sheildtime <= 0){
+                issheild = false;
+                Destroy(sheildcircle);
+            }
         }
     }
     private void MoveHead()
@@ -79,6 +105,37 @@ public class Snakehead : MonoBehaviour
         if(collision.tag == "wall"){
             while(bodylist.Count > 0) Reduce();
             Debug.Log("You died");
+            //SceneManager.LoadScene("gamestart");
+        }
+        if(collision.tag == "boom"){
+            Destroy(collision.gameObject);
+            if(!issheild){
+                int n = bodylist.Count;
+                while(bodylist.Count > n/2) Reduce();
+            }
+        }
+        if(collision.tag == "poisonousgrass"){
+            Destroy(collision.gameObject);
+            if(!issheild){
+                Reduce(); Reduce();
+            }
+        }
+        if(collision.tag == "mushroom"){
+            Destroy(collision.gameObject);
+            int n = bodylist.Count;
+            for(int i = 0; i < n; i++) Grow();
+        }
+        if(collision.tag == "energy"){
+            Destroy(collision.gameObject);
+            isspeedup = true;
+            speed = 200f; 
+            speeduptime = 6f;
+        }
+        if(collision.tag == "sheild"){
+            Destroy(collision.gameObject);
+            issheild = true;
+            sheildtime = 6f;
+            sheildcircle = Instantiate(sheildcircleprefab,transform.position,Quaternion.identity); 
         }
     }
 
