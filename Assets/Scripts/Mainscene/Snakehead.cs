@@ -13,7 +13,7 @@ public class Snakehead : MonoBehaviour
     private float  speeduptime = 0f,sheildtime = 0f;
     void Start()
     {
-
+        Grow(); Grow();
     }
 
     void Update()
@@ -44,10 +44,13 @@ public class Snakehead : MonoBehaviour
         if(issheild){
             sheildtime -= Time.deltaTime;
             if(sheildtime <= 0){
-                issheild = false;
-                Destroy(sheildcircle);
+                closesheild();
             }
         }
+    }
+    private void closesheild(){
+        issheild = false;
+        Destroy(sheildcircle);
     }
     private void MoveHead()
     {
@@ -100,11 +103,10 @@ public class Snakehead : MonoBehaviour
         if(collision.tag == "food"){
             Destroy(collision.gameObject);
             Grow();
-            painter.Instance.genfood();
+            GameObject.Find("Painter").GetComponent<painter>().genfood();
         }
         if(collision.tag == "wall"){
             while(bodylist.Count > 0) Reduce();
-            Debug.Log("You died");
             //SceneManager.LoadScene("gamestart");
         }
         if(collision.tag == "boom"){
@@ -113,12 +115,14 @@ public class Snakehead : MonoBehaviour
                 int n = bodylist.Count;
                 while(bodylist.Count > n/2) Reduce();
             }
+            else closesheild();
         }
         if(collision.tag == "poisonousgrass"){
             Destroy(collision.gameObject);
             if(!issheild){
                 Reduce(); Reduce();
             }
+            else closesheild();
         }
         if(collision.tag == "mushroom"){
             Destroy(collision.gameObject);
@@ -136,6 +140,9 @@ public class Snakehead : MonoBehaviour
             issheild = true;
             sheildtime = 6f;
             sheildcircle = Instantiate(sheildcircleprefab,transform.position,Quaternion.identity); 
+        }
+        if(collision.tag == "smartgrass"){
+            Destroy(collision.gameObject);
         }
     }
 

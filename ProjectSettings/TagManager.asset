@@ -11,6 +11,7 @@ TagManager:
   - poisonousgrass
   - energy
   - sheild
+  - smartgrass
   layers:
   - Default
   - TransparentFX
