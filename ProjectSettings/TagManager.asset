@@ -12,6 +12,7 @@ TagManager:
   - energy
   - sheild
   - smartgrass
+  - block
   layers:
   - Default
   - TransparentFX

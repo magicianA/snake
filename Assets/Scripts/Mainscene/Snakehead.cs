@@ -20,12 +20,6 @@ public class Snakehead : MonoBehaviour
     {
         MoveHead();
         MoveBody();
-        if(Input.GetKeyDown(KeyCode.G)){
-            Grow();
-        }
-        if(Input.GetKeyDown(KeyCode.R)){
-            Reduce();
-        }
         speedupcountdown();
         sheildcountdown();
     }
