@@ -9,8 +9,18 @@ public class Follow : MonoBehaviour
     public float speedl = 100f,speedh = 300f;
     public float interval = 0.02f;
     public float tick = 0.05f;
+    public GameObject snake;
+    void Awake(){
+        snake = GameObject.Find("SnakeHead");
+    }
     void Update()
     {
+        if(snake.GetComponent<Snakehead>().isspeedup&&speedl == 100f){
+            speedl = 200f;
+        }
+        if(!snake.GetComponent<Snakehead>().isspeedup&&speedl == 200f){
+            speedl = 100f;
+        }
         pos.Add(target.position);
         if(tick <= 0){
             move();

@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Mainscene3\painter3.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\snakehead3.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\textmove.cs" />
+     <Compile Include="Assets\Scripts\SelectMode\gamemode.cs" />
      <Compile Include="Assets\Scripts\Startscene\exit.cs" />
      <Compile Include="Assets\Scripts\Startscene\start.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

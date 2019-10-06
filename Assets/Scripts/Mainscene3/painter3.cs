@@ -35,26 +35,26 @@ public class painter3 : MonoBehaviour
     {
         GameObject block1 = Instantiate(blockprefab,new Vector3(600,46,0),Quaternion.identity);
         block1.GetComponent<SpriteRenderer>().sprite = blocksprite[System.Convert.ToInt32(Random.Range(0,4))];
-        block1.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,4));
+        block1.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
 
         GameObject block2 = Instantiate(blockprefab,new Vector3(600,-16,0),Quaternion.identity);
         block2.GetComponent<SpriteRenderer>().sprite = blocksprite[System.Convert.ToInt32(Random.Range(0,4))];
-        block2.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,4));
+        block2.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
         
         GameObject block3 = Instantiate(blockprefab,new Vector3(600,-76,0),Quaternion.identity);
         block3.GetComponent<SpriteRenderer>().sprite = blocksprite[System.Convert.ToInt32(Random.Range(0,4))];
-        block3.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,4));
+        block3.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
         
         GameObject block4 = Instantiate(blockprefab,new Vector3(600,-136,0),Quaternion.identity);
         block4.GetComponent<SpriteRenderer>().sprite = blocksprite[System.Convert.ToInt32(Random.Range(0,4))];
-        block4.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,4));
+        block4.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
 
     }
     void genfood3()
     {
 
         GameObject food1 = Instantiate(food3prefab,new Vector3(600,52,0),Quaternion.identity);
-        food1.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
+        food1.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(1,6));
 
         GameObject food2 = Instantiate(food3prefab,new Vector3(600,11,0),Quaternion.identity);
         food2.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));

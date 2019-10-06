@@ -5,8 +5,11 @@ using UnityEngine;
 public class followy : MonoBehaviour
 {
     
-    public float movespeedl = 800f, movespeedh = 1000f;
-    public GameObject target;
+    private float speedl = 300f, speedh = 400f;
+    public Transform target;
+    public List<Vector3> pos = new List<Vector3>();
+    public float interval = 0.02f;
+    public float tick = 0.05f;
     void Start()
     {
         
@@ -14,24 +17,27 @@ public class followy : MonoBehaviour
 
     void Update()
     {
-        move();
+        pos.Add(target.position);
+        if(tick <= 0){
+            move();
+            pos.RemoveAt(0);
+        }
+        tick -= Time.deltaTime;
     }
         
     private void move()
     {
-        Vector3 targetpos = target.transform.position;
-        if(targetpos.y > transform.position.y && transform.position.y < 57){
-            if(targetpos.y - transform.position.y > 40){
-                transform.Translate(Vector3.up * movespeedh * Time.deltaTime);
+        if(System.Math.Abs(transform.position.y - target.position.y) > 1f){
+            if(pos.Count > 0){
+                if(System.Math.Abs(transform.position.y - target.position.y) > 30f)
+                    transform.Translate(drec(pos[0].y,transform.position.y) * speedh * Time.deltaTime);
+                else transform.Translate(drec(pos[0].y,transform.position.y) * speedl * Time.deltaTime);
             }
-            else transform.Translate(Vector3.up * movespeedl * Time.deltaTime);
         }
-        if(targetpos.y < transform.position.y && transform.position.y > -150){
-            if(transform.position.y - targetpos.y > 40){
-                transform.Translate(Vector3.down * movespeedh * Time.deltaTime);
-            }
-            else transform.Translate(Vector3.down * movespeedl * Time.deltaTime);
-        }
+    }
+    Vector3 drec(float tar,float now){
+        if(tar > now) return Vector3.up;
+        return Vector3.down;
     }
 
 }

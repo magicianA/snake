@@ -36,9 +36,9 @@ public class snakehead3 : MonoBehaviour
     {
         GameObject body = Instantiate(bodyprefab,getlastbody(),Quaternion.identity);
         if(bodylist.Count > 0)
-            body.GetComponent<followy>().target = bodylist[bodylist.Count-1].gameObject;
+            body.GetComponent<followy>().target = bodylist[bodylist.Count-1].transform;
         else 
-            body.GetComponent<followy>().target = gameObject;
+            body.GetComponent<followy>().target = transform;
         bodylist.Add(body.transform);
     }
     private Vector3 getlastbody()

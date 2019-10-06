@@ -9,7 +9,7 @@ public class Snakehead : MonoBehaviour
     public List<Transform> bodylist = new List<Transform> ();
     public GameObject bodyprefab,sheildcircleprefab;
     private GameObject sheildcircle;
-    private bool isspeedup = false, issheild = false;
+    public bool isspeedup = false, issheild = false;
     private float  speeduptime = 0f,sheildtime = 0f;
     void Start()
     {
@@ -19,7 +19,6 @@ public class Snakehead : MonoBehaviour
     void Update()
     {
         MoveHead();
-        MoveBody();
         speedupcountdown();
         sheildcountdown();
     }
@@ -38,6 +37,7 @@ public class Snakehead : MonoBehaviour
         if(issheild){
             sheildtime -= Time.deltaTime;
             if(sheildtime <= 0){
+                issheild = false;
                 closesheild();
             }
         }

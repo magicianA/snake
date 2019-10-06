@@ -11,7 +11,7 @@ public class start : MonoBehaviour
     public GameObject btn;
     public void startgame()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("modeselect");
     }
 
 }
