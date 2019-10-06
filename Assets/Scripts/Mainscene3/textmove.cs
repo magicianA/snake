@@ -10,6 +10,6 @@ public class textmove : MonoBehaviour
     }
     void Update()
     {
-        transform.position = transform.parent.transform.position;
+        
     }
 }

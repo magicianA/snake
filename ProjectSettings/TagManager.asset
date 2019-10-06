@@ -13,6 +13,7 @@ TagManager:
   - sheild
   - smartgrass
   - block
+  - food3
   layers:
   - Default
   - TransparentFX

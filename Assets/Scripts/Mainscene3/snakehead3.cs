@@ -57,6 +57,7 @@ public class snakehead3 : MonoBehaviour
             Destroy(bodylist[bodylist.Count-1].gameObject);
             bodylist.RemoveAt(bodylist.Count-1);
         }
+        else print("deadsnake");
     }
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "block"){
@@ -64,8 +65,10 @@ public class snakehead3 : MonoBehaviour
             Destroy(collision.gameObject);
             for(int i = 0 ;i < n;i++) reduce();
         }
-        if(collision.tag == "blah"){
-
+        if(collision.tag == "food3"){
+            int n = collision.gameObject.GetComponent<blockmove>().damage;
+            Destroy(collision.gameObject);
+            for(int i = 0 ;i < n;i++) grow();            
         }
     }
 }

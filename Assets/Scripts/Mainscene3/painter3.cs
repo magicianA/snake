@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class painter3 : MonoBehaviour
 {
-    public float blocktick = 4f;
-    private float blocktime = 0f;
-    public GameObject blockprefab;
+    private float blocktick = 4f,food3tick = 4f;
+    private float blocktime = 0f,food3time = 2f;
+    public GameObject blockprefab,food3prefab;
     public Sprite[] blocksprite = new Sprite[4];
-    private void blockcountdown()
+    private void countdown()
     {   
+        
+        if(food3time <= 0 && blocktime > 0){
+            genfood3();
+            food3time = food3tick;
+        }
         if(blocktime <= 0){
             genblock();
             blocktime = blocktick;
         }
         blocktime -= Time.deltaTime;
+        food3time -= Time.deltaTime;
     }
     void Start()
     {
@@ -23,7 +29,7 @@ public class painter3 : MonoBehaviour
 
     void Update()
     {
-        blockcountdown();
+        countdown();
     }
     void genblock()
     {
@@ -43,5 +49,23 @@ public class painter3 : MonoBehaviour
         block4.GetComponent<SpriteRenderer>().sprite = blocksprite[System.Convert.ToInt32(Random.Range(0,4))];
         block4.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,4));
 
+    }
+    void genfood3()
+    {
+
+        GameObject food1 = Instantiate(food3prefab,new Vector3(600,52,0),Quaternion.identity);
+        food1.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
+
+        GameObject food2 = Instantiate(food3prefab,new Vector3(600,11,0),Quaternion.identity);
+        food2.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
+        
+        GameObject food3 = Instantiate(food3prefab,new Vector3(600,-36,0),Quaternion.identity);
+        food3.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
+        
+        GameObject food4 = Instantiate(food3prefab,new Vector3(600,-83,0),Quaternion.identity);
+        food4.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));
+    
+        GameObject food5 = Instantiate(food3prefab,new Vector3(600,-136,0),Quaternion.identity);
+        food5.GetComponent<blockmove>().damage = System.Convert.ToInt32(Random.Range(0,6));    
     }
 }

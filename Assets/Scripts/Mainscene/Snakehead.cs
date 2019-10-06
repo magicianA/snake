@@ -60,7 +60,7 @@ public class Snakehead : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
     }
-    private void MoveBody()
+    private void MoveBody() //abandoned
     {
         if(bodylist.Count > 0){
             for(int i = 0;i < bodylist.Count; i++){
@@ -78,6 +78,9 @@ public class Snakehead : MonoBehaviour
     public void Grow()
     {
         GameObject body = Instantiate(bodyprefab,getlastbody(),Quaternion.identity);
+        if(bodylist.Count > 0)
+            body.GetComponent<Follow>().target = bodylist[bodylist.Count-1];
+        else body.GetComponent<Follow>().target = transform;
         bodylist.Add(body.transform);
     }
     private Vector3 getlastbody()

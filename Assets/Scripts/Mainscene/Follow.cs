@@ -4,30 +4,36 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    private List<Vector3> path = new List<Vector3>();
     public Transform target;
-    public float dis = 20f;
-    public float spd = 100f;
-    void Start()
-    {
-        
-    }
+    private List<Vector3> pos = new List<Vector3>();
+    public float speedl = 100f,speedh = 300f;
+    public float interval = 0.02f;
+    public float tick = 0.05f;
     void Update()
     {
-        follow();
-    }
-    void walkto(Vector3 targetpos,float speed){
-        transform.up = targetpos - transform.position;
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
-    }
-    void follow()
-    {
-        if(path.Count > 0){
-            while(path.Count > 20) path.RemoveAt(0);
-            if(Vector3.Distance(target.position,path[path.Count-1]) > dis ) path.Add(target.position);
-            walkto(path[0],spd);
-            path.RemoveAt(0);
+        pos.Add(target.position);
+        if(tick <= 0){
+            move();
+            pos.RemoveAt(0);
         }
-        else path.Add(target.position);
+        tick -= Time.deltaTime;
+    }
+    void move() //勉强可用
+    {
+        if(Vector3.Distance(transform.position,target.position) > 20f){
+            if(pos.Count > 0){
+                Vector3 drec = pos[0] - transform.position;
+                transform.up = drec;
+                if(Vector3.Distance(transform.position,target.position) > 30f)
+                    transform.Translate(Vector3.up * speedh * Time.deltaTime);
+                else transform.Translate(Vector3.up * speedl * Time.deltaTime);
+            }
+            else{
+                Vector3 drec = target.position - transform.position;
+                transform.up = drec;
+                transform.Translate(Vector3.up * speedl * Time.deltaTime);
+                pos.RemoveAt(0);
+            }
+        }
     }
 }

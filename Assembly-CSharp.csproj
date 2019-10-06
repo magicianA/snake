@@ -58,6 +58,10 @@
      <Compile Include="Assets\Scripts\Mainscene\painter.cs" />
      <Compile Include="Assets\Scripts\Mainscene\Shieldcircle.cs" />
      <Compile Include="Assets\Scripts\Mainscene\Snakehead.cs" />
+     <Compile Include="Assets\Scripts\Mainscene2\cameramove2.cs" />
+     <Compile Include="Assets\Scripts\Mainscene2\follow2.cs" />
+     <Compile Include="Assets\Scripts\Mainscene2\myfollow.cs" />
+     <Compile Include="Assets\Scripts\Mainscene2\snakehead2.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\blockmove.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\followy.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\painter3.cs" />
