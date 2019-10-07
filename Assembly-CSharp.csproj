@@ -80,6 +80,8 @@
      <Compile Include="Assets\Scripts\Mainscene4\wander.cs" />
      <Compile Include="Assets\Scripts\SelectMode\gamemode.cs" />
      <Compile Include="Assets\Scripts\Startscene\exit.cs" />
+     <Compile Include="Assets\Scripts\Startscene\musicsetting.cs" />
+     <Compile Include="Assets\Scripts\Startscene\setting.cs" />
      <Compile Include="Assets\Scripts\Startscene\start.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Program Files/Unity/2018.3.14f1/Projects/snake/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
