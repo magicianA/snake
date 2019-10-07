@@ -58,6 +58,8 @@
      <Compile Include="Assets\Scripts\Mainscene\painter.cs" />
      <Compile Include="Assets\Scripts\Mainscene\Shieldcircle.cs" />
      <Compile Include="Assets\Scripts\Mainscene\Snakehead.cs" />
+     <Compile Include="Assets\Scripts\Mainscene\UI\mainUI.cs" />
+     <Compile Include="Assets\Scripts\Mainscene\UI\pause.cs" />
      <Compile Include="Assets\Scripts\Mainscene2\cameramove2.cs" />
      <Compile Include="Assets\Scripts\Mainscene2\follow2.cs" />
      <Compile Include="Assets\Scripts\Mainscene2\myfollow.cs" />
@@ -67,6 +69,11 @@
      <Compile Include="Assets\Scripts\Mainscene3\painter3.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\snakehead3.cs" />
      <Compile Include="Assets\Scripts\Mainscene3\textmove.cs" />
+     <Compile Include="Assets\Scripts\Mainscene4\movebody4.cs" />
+     <Compile Include="Assets\Scripts\Mainscene4\moveobstacle.cs" />
+     <Compile Include="Assets\Scripts\Mainscene4\painter4.cs" />
+     <Compile Include="Assets\Scripts\Mainscene4\snakehead4.cs" />
+     <Compile Include="Assets\Scripts\Mainscene4\wander.cs" />
      <Compile Include="Assets\Scripts\SelectMode\gamemode.cs" />
      <Compile Include="Assets\Scripts\Startscene\exit.cs" />
      <Compile Include="Assets\Scripts\Startscene\start.cs" />

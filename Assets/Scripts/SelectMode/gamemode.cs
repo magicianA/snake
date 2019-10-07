@@ -20,6 +20,6 @@ public class gamemode : MonoBehaviour
     }
     public void gamemode4()
     {
-
+        SceneManager.LoadScene("MainScene4");
     }
 }

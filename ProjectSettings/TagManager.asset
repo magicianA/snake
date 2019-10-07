@@ -14,6 +14,7 @@ TagManager:
   - smartgrass
   - block
   - food3
+  - colorchanger
   layers:
   - Default
   - TransparentFX

@@ -40,6 +40,7 @@ public class snakehead3 : MonoBehaviour
         else 
             body.GetComponent<followy>().target = transform;
         bodylist.Add(body.transform);
+        mainUI.Instance.updateUI(4);
     }
     private Vector3 getlastbody()
     {
@@ -57,7 +58,7 @@ public class snakehead3 : MonoBehaviour
             Destroy(bodylist[bodylist.Count-1].gameObject);
             bodylist.RemoveAt(bodylist.Count-1);
         }
-        else print("deadsnake");
+        else mainUI.Instance.death();
     }
     void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "block"){

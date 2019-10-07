@@ -17,6 +17,7 @@ public class painter3 : MonoBehaviour
         }
         if(blocktime <= 0){
             genblock();
+            mainUI.Instance.updateUI(1);
             blocktime = blocktick;
         }
         blocktime -= Time.deltaTime;

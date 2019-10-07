@@ -11,6 +11,7 @@ public class Snakehead : MonoBehaviour
     private GameObject sheildcircle;
     public bool isspeedup = false, issheild = false;
     private float  speeduptime = 0f,sheildtime = 0f;
+    public GameObject UIcontroller;
     void Start()
     {
         Grow(); Grow();
@@ -82,6 +83,7 @@ public class Snakehead : MonoBehaviour
             body.GetComponent<Follow>().target = bodylist[bodylist.Count-1];
         else body.GetComponent<Follow>().target = transform;
         bodylist.Add(body.transform);
+        mainUI.Instance.updateUI(6);
     }
     private Vector3 getlastbody()
     {
@@ -104,7 +106,7 @@ public class Snakehead : MonoBehaviour
         }
         if(collision.tag == "wall"){
             while(bodylist.Count > 0) Reduce();
-            //SceneManager.LoadScene("gamestart");
+            mainUI.Instance.death();
         }
         if(collision.tag == "boom"){
             Destroy(collision.gameObject);

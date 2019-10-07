@@ -7,6 +7,7 @@ Assets/Scenes/MainScene.unity
 Assets/Scenes/modeselect.unity
 Assets/Scenes/MainScene3.unity
 Assets/Scenes/MainScene2/MainScene2.unity
+Assets/Scenes/MainScene4.unity
 SceneListEnd?
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
@@ -129,7 +130,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 f3b1631e4147eb0ee08f818130931fbc Assembly-CSharp.dll:.Follow
-c2fa3ed65d69068734d9aa82f6849d20 Assembly-CSharp.dll:.Snakehead
+5d22d737edaf0c64697ecc16a6b268d4 Assembly-CSharp.dll:.Snakehead
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.exit
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -162,6 +163,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 66bca5cc6a18c5298ec75235e56a84d6 Assembly-CSharp.dll:.cameramove2
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.gamemode
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -177,4 +179,10 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 14c6390bee7d4ce10feb7eadbb413aff Assembly-CSharp.dll:.painter
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.textmove
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.gamemode
+37cf61fe733d06790c8b005000a472c5 Assembly-CSharp.dll:.snakehead4
+afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.movebody4
+5a44e35bbdc789167670107e0f8a7b11 Assembly-CSharp.dll:.painter4
+afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.moveobstacle
+afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.wander
+6c49d3b97d252344e2dec2f2e4564b4b Assembly-CSharp.dll:.mainUI
+35ec97400fd57993e189a9a878318af3 Assembly-CSharp.dll:.pause
