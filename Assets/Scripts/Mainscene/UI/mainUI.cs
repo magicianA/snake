@@ -18,7 +18,6 @@ public class mainUI : MonoBehaviour
     void Awake()
     {
         _instance = this;
-        scoretext = GameObject.Find("ScoreText").GetComponent<Text>();
     }
     void Start()
     {

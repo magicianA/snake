@@ -15,6 +15,9 @@ TagManager:
   - block
   - food3
   - colorchanger
+  - bullet
+  - snake
+  - monster
   layers:
   - Default
   - TransparentFX

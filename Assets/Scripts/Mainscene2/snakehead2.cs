@@ -5,9 +5,13 @@ using UnityEngine;
 public class snakehead2 : MonoBehaviour
 {
     public List<Transform> bodylist = new List<Transform>();
-    public GameObject bodyprefab;
+    public GameObject bodyprefab,bulletprefab;
     public float speed = 100f;
     
+    void Start()
+    {
+        for(int i = 0;i < 10;i++) Grow();
+    }
     private void MoveHead()
     {
         Vector3 mouse = Input.mousePosition;
@@ -25,8 +29,7 @@ public class snakehead2 : MonoBehaviour
     void Update()
     {
         MoveHead();
-        if(Input.GetKeyDown(KeyCode.G)) Grow();
-        if(Input.GetKeyDown(KeyCode.R)) Reduce();
+        if(Input.GetMouseButtonDown(0)) shoot();
     }
 
     public void Grow()
@@ -51,5 +54,20 @@ public class snakehead2 : MonoBehaviour
             Destroy(bodylist[bodylist.Count-1].gameObject);
             bodylist.RemoveAt(bodylist.Count-1);
         }
+        else  mainUI.Instance.death();
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "wall"){
+            mainUI.Instance.death();
+        }
+        if(collision.tag == "monster"){
+            mainUI.Instance.death();
+        }
+    }
+    void shoot()
+    {
+        GameObject bullet = Instantiate(bulletprefab,transform.position + transform.up.normalized * 50f,Quaternion.identity);
+        bullet.transform.up = transform.up;
     }
 }
